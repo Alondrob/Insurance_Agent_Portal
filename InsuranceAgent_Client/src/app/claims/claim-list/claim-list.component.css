@@ -1,0 +1,23 @@
+.claimsList-main-container {
+    /* display: flex; */
+    /* flex-direction: column; */
+    align-items: center;
+    /* margin-left: auto; */
+    justify-content: center;
+    width: 100%;
+}
+
+.charts-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.claims-table {
+    width: 100%;
+    /* display: flex; */
+    justify-content: center;
+}
+
+.table-cont {
+    width: 80%;
+}

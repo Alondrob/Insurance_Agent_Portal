@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{256517D9-4D1C-45A1-A1BD-5C51E4B74F49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimsManagementService", "backend\ClaimsManagementService\ClaimsManagementService.csproj", "{14223BD8-4EC3-427B-8B9E-4B665A3F9751}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsuranceAgentApi", "backend\InsuranceAgentApi\InsuranceAgentApi.csproj", "{CF28BFED-9331-495B-B19C-5D074F329F6A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14223BD8-4EC3-427B-8B9E-4B665A3F9751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14223BD8-4EC3-427B-8B9E-4B665A3F9751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14223BD8-4EC3-427B-8B9E-4B665A3F9751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14223BD8-4EC3-427B-8B9E-4B665A3F9751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF28BFED-9331-495B-B19C-5D074F329F6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF28BFED-9331-495B-B19C-5D074F329F6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF28BFED-9331-495B-B19C-5D074F329F6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF28BFED-9331-495B-B19C-5D074F329F6A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{14223BD8-4EC3-427B-8B9E-4B665A3F9751} = {256517D9-4D1C-45A1-A1BD-5C51E4B74F49}
+		{CF28BFED-9331-495B-B19C-5D074F329F6A} = {256517D9-4D1C-45A1-A1BD-5C51E4B74F49}
+	EndGlobalSection
+EndGlobal

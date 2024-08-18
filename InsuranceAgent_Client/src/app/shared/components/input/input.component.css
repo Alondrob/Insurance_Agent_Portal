@@ -1,0 +1,30 @@
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input {
+    padding: 8px 40px 8px 8px;
+    /* Add right padding for the icon if shown */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    /* Adjust as needed for the rounded effect */
+    font-size: 14px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    /* Default color */
+    transition: color 0.3s ease;
+}
+
+.input-container:hover .search-icon {
+    color: black;
+    /* Change to black on hover */
+}

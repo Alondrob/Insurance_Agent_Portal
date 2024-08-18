@@ -1,0 +1,86 @@
+.app-header {
+    height: 15vh;
+    /* 15% of the viewport height */
+    background: linear-gradient(45deg, #3a7bd5, #1a4a8b);
+    /* Gradient from medium blue to dark blue */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header-left,
+.header-center,
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    width: 25%;
+    display: flex;
+    align-items: center;
+}
+
+.header-center {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right {
+    width: 25%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.mat-icon {
+    font-size: 50px;
+}
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    /* Increase width of the container */
+    height: 60px;
+    /* Increase height of the container */
+    margin-right: 8px;
+}
+
+.home-icon {
+font-size: 50px;
+    height: 50px;
+    width: 50px;
+    color: black;
+    cursor: pointer;
+}
+
+.portal-title {
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+    /* Default color */
+    transition: color 0.3s ease;
+}
+
+.input-container:hover .search-icon {
+    color: black;
+    /* Change to black on hover */
+}

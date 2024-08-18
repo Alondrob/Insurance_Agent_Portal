@@ -1,0 +1,42 @@
+<div *ngIf="isOpen" class="modal-overlay">
+    <div class="modal">
+        <div class="modal-header">
+            <button class="close-button" (click)="close()">X</button>
+        </div>
+        <div class="modal-content">
+            <div class="form-group">
+                <label>Claim ID</label>
+                <input [(ngModel)]="claimData.id" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Policy Number</label>
+                <input [(ngModel)]="claimData.policyNumber" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Date of Loss</label>
+                <input [(ngModel)]="claimData.dateofLoss" type="date" />
+            </div>
+            <div class="form-group">
+                <label>Cause of Loss</label>
+                <input [(ngModel)]="claimData.causeOfLoss" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Claim Amount</label>
+                <input [(ngModel)]="claimData.claimAmount" type="number" />
+            </div>
+            <div class="form-group">
+                <label>Status</label>
+                <input [(ngModel)]="claimData.status" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Claim Type</label>
+                <input [(ngModel)]="claimData.claimType" type="text" />
+            </div>
+            <div class="form-group">
+                <label>Customer Name</label>
+                <input [(ngModel)]="claimData.customerName" type="text" />
+            </div>
+            <button (click)="submit()">Submit</button>
+        </div>
+    </div>
+</div>

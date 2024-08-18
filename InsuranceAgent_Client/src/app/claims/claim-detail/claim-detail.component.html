@@ -1,0 +1,10 @@
+<h2>Claim Details</h2>
+<div *ngIf="claim">
+    <p><strong>Policy Number:</strong> {{ claim.policyNumber }}</p>
+    <p><strong>Date of Loss:</strong> {{ claim.dateOfLoss | date }}</p>
+    <p><strong>Cause of Loss:</strong> {{ claim.causeOfLoss }}</p>
+    <p><strong>Claim Amount:</strong> {{ claim.claimAmount | currency }}</p>
+    <p><strong>Status:</strong> {{ claim.status }}</p>
+    <p><strong>Claim Type:</strong> {{ claim.claimType }}</p>
+    <button (click)="goBack()">Back</button>
+</div>

@@ -1,0 +1,13 @@
+<div class="app-container">
+  <app-header></app-header>
+  <div class="content-container">
+    <app-sidebar class="app-sidebar"></app-sidebar>
+    <div class="dynamic-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+
+<!-- Modals -->
+<app-login *ngIf="isLoginModalOpen" (close)="closeModals()"></app-login>
+<app-register *ngIf="isRegisterModalOpen" (close)="closeModals()"></app-register>

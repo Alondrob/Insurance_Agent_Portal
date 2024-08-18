@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+/* Ensure the body takes up the full viewport width and height */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Apply a global box-sizing rule */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Ensure the main app container takes up the full viewport height */
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

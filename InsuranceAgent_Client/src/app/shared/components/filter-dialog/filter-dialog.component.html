@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Filter</h1>
+<div mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Filter Value</mat-label>
+        <input matInput [(ngModel)]="data.filterValue">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button (click)="applyFilter(data.filterValue)">Apply</button>
+</div>

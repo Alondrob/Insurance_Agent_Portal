@@ -1,0 +1,112 @@
+<div class="table-wrapper">
+  <div class="table-header">
+    <button class="new-claim-button" (click)="openCreateClaimModal()">
+      Add Claim
+    </button>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 10%">
+          <div class="header-content">
+            <label>Claim ID</label>
+            <span class="sort-icon" (click)="toggleSort('id')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('id')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+        <th style="width: 15%">
+          <div class="header-content">
+            <label>Policy Number</label>
+            <span class="sort-icon" (click)="toggleSort('policyNumber')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('policyNumber')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+        <th style="width: 15%">
+          <div class="header-content">
+            <label>Cause of Loss</label>
+            <span class="sort-icon" (click)="toggleSort('causeOfLoss')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('causeOfLoss')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+        <th style="width: 20%">
+          <div class="header-content">
+            <label>Customer Name</label>
+            <span class="sort-icon" (click)="toggleSort('customerName')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('customerName')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+        <th style="width: 15%">
+          <div class="header-content">
+            <label>Date of Loss</label>
+            <span class="sort-icon" (click)="toggleSort('dateofLoss')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('dateofLoss')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+        <th style="width: 15%">
+          <div class="header-content">
+            <label>Claim Amount</label>
+            <span class="sort-icon" (click)="toggleSort('claimAmount')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('claimAmount')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+        <th style="width: 10%">
+          <div class="header-content">
+            <label>Status</label>
+            <span class="sort-icon" (click)="toggleSort('status')">
+              <mat-icon>sort</mat-icon>
+            </span>
+            <span class="filter-icon" (click)="toggleFilter('status')">
+              <ng-icon name="tdesignFilter"></ng-icon>
+            </span>
+          </div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let claim of filteredClaims">
+        <td>{{ claim.id }}</td>
+        <td>{{ claim.policyNumber }}</td>
+        <td>{{ claim.causeOfLoss }}</td>
+        <td>{{ claim.customerName }}</td>
+        <td>{{ claim.dateofLoss | date : "MM/dd/yyyy" }}</td>
+        <td>{{ claim.claimAmount | currency : "USD" : "symbol" }}</td>
+        <td>{{ claim.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination-controls">
+    <span class="pagination-icon" (click)="previousPage()">
+      <mat-icon>arrow_back</mat-icon>
+    </span>
+    <span class="pagination-icon" (click)="nextPage()">
+      <mat-icon>arrow_forward</mat-icon>
+    </span>
+  </div>
+  <!-- <app-filter-modal [isOpen]="isFilterModalOpen" (closeModal)="closeFilterModal()" [filterField]="filterField">
+    </app-filter-modal> -->
+</div>

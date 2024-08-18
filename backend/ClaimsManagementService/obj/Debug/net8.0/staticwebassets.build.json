@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9rOB3TKRhcqW1lgVgnvBIBeV0/jsP9izzS6Sv3UlZ/M=",
+  "Source": "ClaimsManagementService",
+  "BasePath": "_content/ClaimsManagementService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

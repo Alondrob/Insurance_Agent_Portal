@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "9D/UtABQNpLYnjfWl3sJRi59tPhXWckh90KJs1vqbY8=",
+  "Source": "InsuranceAgentApi",
+  "BasePath": "_content/InsuranceAgentApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

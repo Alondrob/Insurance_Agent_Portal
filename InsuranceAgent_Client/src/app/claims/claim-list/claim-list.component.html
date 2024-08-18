@@ -1,0 +1,38 @@
+<div class="claimsList-main-container">
+  <div class="charts-container"></div>
+  <div class="claims-table">
+    <app-custom-table
+      [claims]="displayedClaims"
+      (filterFieldSelected)="openFilterModal($event)"
+      (createClaim)="openCreateClaimModal()"
+    ></app-custom-table>
+  </div>
+  <app-filter-modal
+    [isOpen]="isFilterModalOpen"
+    [filterField]="filterField"
+    (closeModal)="closeFilterModal()"
+    (filterApplied)="applyFilters($event)"
+  ></app-filter-modal>
+  <app-claim-create
+    *ngIf="isCreateClaimModalOpen"
+    [isOpen]="isCreateClaimModalOpen"
+    (closeModal)="closeCreateClaimModal()"
+    (submitClaim)="addClaim($event)"
+  >
+</app-claim-create>
+
+  <div class="pagination-controls">
+    <button
+      (click)="changePage(filterCriteria.page - 1)"
+      [disabled]="filterCriteria.page === 1"
+    >
+      Previous
+    </button>
+    <button
+      (click)="changePage(filterCriteria.page + 1)"
+      [disabled]="displayedClaims.length < filterCriteria.pageSize"
+    >
+      Next
+    </button>
+  </div>
+</div>

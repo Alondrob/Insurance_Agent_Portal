@@ -1,0 +1,18 @@
+<header class="app-header">
+    <div class="header-left">
+        <div class="icon-container" >
+            <mat-icon class="home-icon" (click)="navigateHome()">home</mat-icon>
+        </div>
+        <span class="portal-title">InsuranceAgent-Portal</span>
+    </div>
+    <div class="header-center">
+        <div class="search-container">
+            <app-input type="text" placeholder="Search..." [style]="searchStyles" [showIcon]="true"
+                (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+            </app-input>
+        </div>
+    </div>
+    <div class="header-right">
+        <!-- Additional content can be placed here if needed -->
+    </div>
+</header>

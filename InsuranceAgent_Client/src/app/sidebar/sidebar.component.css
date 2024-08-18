@@ -1,0 +1,44 @@
+.sidebar {
+    width: 100%;
+    height: 100%;
+    background-color: #f8f9fa;
+    /* position: fixed; */
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+    display: flex;
+    /* Added */
+    flex-direction: column;
+    /* Added */
+    align-items: center;
+    /* Added to center items horizontally */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    /* Ensure the ul takes the full width for better alignment */
+    text-align: center;
+    /* Center the text inside the ul */
+}
+
+.sidebar ul li {
+    padding: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #111212;
+    display: block;
+    width: 100%;
+    /* Ensure the links take the full width */
+    text-align: center;
+    
+    /* Center the text inside the links */
+}
+
+.sidebar ul li a:hover {
+   font-size: large;
+    font-weight: 800;
+}
