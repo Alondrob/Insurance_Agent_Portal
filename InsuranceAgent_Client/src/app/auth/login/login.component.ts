@@ -1,26 +1,24 @@
+declare var google: any;
 import { Component, EventEmitter, Output, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService as LocalAuthService } from '../services/auth.service';
-import { SocialAuthService, SocialUser, GoogleLoginProvider, GoogleSigninButtonModule } from '@abacritt/angularx-social-login';
 import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, GoogleSigninButtonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   @Output() close = new EventEmitter<void>();
   loginForm: FormGroup;
-  user: SocialUser = new SocialUser();
   loggedIn: boolean = false;
 
   constructor(
     private fb: FormBuilder,
     private authService: LocalAuthService,
-    private socialAuthService: SocialAuthService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -28,42 +26,39 @@ export class LoginComponent implements OnInit {
     });
   }
 //loginComponent
-  ngOnInit(): void {
-    this.socialAuthService.authState.subscribe((user) => {
-      this.user = user;
-      this.loggedIn = (user != null);
-      if (this.loggedIn && user) {
-        console.log("ngOnInit", user);
-        //error here
-        this.authService.loginWithGoogle(user.idToken).subscribe({
-          next: (response: any) => {
-            console.log('Google login successful', response);
-            this.close.emit();
-          },
-          error: (error: any) => {
-            console.error('Google login error', error);
-          }
-        });
+   ngOnInit(): void {
+    // Initialize Google Sign-In
+    google.accounts.id.initialize({
+      client_id: environment.googleClientId, // Replace with your actual client ID from environment
+      callback: this.handleCredentialResponse.bind(this)
+    });
+    google.accounts.id.renderButton(
+      document.getElementById("google-signin-button"), // Replace with the actual element ID
+      { theme: "outline", size: "large" } // Customize the button as needed
+    );
+  }
+
+  handleCredentialResponse(response: any) {
+    console.log("Encoded JWT ID token: " + response.credential);
+
+    // Use the ID token received from Google to authenticate with your backend
+    this.authService.loginWithGoogle(response.credential).subscribe({
+      next: (backendResponse: any) => {
+        console.log('Google login successful', backendResponse);
+        this.loggedIn = true;
+        this.close.emit();
+      },
+      error: (error: any) => {
+        console.error('Google login error', error);
       }
     });
   }
 
   signInWithGoogle(): void {
-    this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
-      (user: SocialUser) => {
-        this.authService.loginWithGoogle(user.idToken).subscribe({
-          next: (response: any) => {
-            console.log('signInWithGoogle login successful', response);
-            this.close.emit();
-          },
-          error: (error: any) => {
-            console.error('signInWithGoogle login error', error);
-          }
-        });
-      }
-    ).catch((err) => console.error('signInWithGoogle login error', err));
+    // Trigger the Google Sign-In flow (optional if you need it outside the button)
+    google.accounts.id.prompt();
   }
-
+  
   onSubmit() {
     if (this.loginForm.valid) {
       this.authService.login(this.loginForm.value).subscribe({

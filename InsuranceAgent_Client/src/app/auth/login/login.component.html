@@ -13,7 +13,11 @@
       </div>
       <button type="submit" [disabled]="!loginForm.valid">Login</button>
     </form>
+
+    <!-- Button to trigger Google Sign-In manually -->
     <button (click)="signInWithGoogle()">Sign in with Google</button>
-    <asl-google-signin-button type="standard" size="large"></asl-google-signin-button>
+
+    <!-- Google Sign-In Button rendered by Google API -->
+    <div id="google-signin-button"></div>
   </div>
 </div>
